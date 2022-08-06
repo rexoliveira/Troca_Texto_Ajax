@@ -4,19 +4,17 @@ const btn3 = document.querySelector("#botao3");
 var texto = document.querySelector(".escolha");
 const btn = [btn1, btn2, btn3];
 let ajax = new XMLHttpRequest();
+let posicao = ""
 
 btn.forEach((el, index) => {
     el.addEventListener("click", () =>
-        trocaTexto(
-            "Botão-" + (index + Number(1)) + "<hr>",
-            "pagina" + (index + Number(1)) + ".html"
-        )
+        trocaTexto(index + Number(1))
     );
 });
 
-function trocaTexto(nome, url) {
+function trocaTexto(index) {
     texto.innerHTML = "";
-    texto.innerHTML = "<span class=\"nomebotao\">" + nome.toUpperCase() + "</span>"
+    texto.innerHTML = "<span class=\"nomebotao\">" + ("Botão-" + index + "<hr>").toUpperCase() + "</span>"
     texto.innerHTML = texto.innerHTML + "<span class=\"status\">STATUS:</span><hr>"
 
     var ajax = new XMLHttpRequest();
@@ -28,7 +26,7 @@ function trocaTexto(nome, url) {
         ajax.status +
         "<br><hr>";
 
-    ajax.open("GET", url, true);
+    ajax.open("GET", "pagina" + index + ".html", true);
 
     ajax.send(null);
     mensagem();
@@ -39,10 +37,10 @@ function trocaTexto(nome, url) {
         if (ajax.readyState == 4) {
             if (ajax.status == 200) {
                 texto.innerHTML =
-                    texto.innerHTML + "<span class=\"titulotexto\">TEXTO:</span><hr>" + "<span class=\"texto\">" + ajax.responseText + "</span>";
+                    texto.innerHTML + "<span class=\"titulotexto\">TEXTO "+index+" :</span><hr>" + "<span class=\"texto\">" + ajax.responseText + "</span>";
             } else {
                 texto.innerHTML =
-                    "<span class=\"erro\">" + texto.innerHTML + "Erro ao acessar a página: " + ajax.status + "</span>";
+                    "<span class=\"erro\">" + texto.innerHTML + "Erro ao tentar acessar  \"pagina"+index+".html\": " + ajax.status + "</span>";
             }
         }
     };
