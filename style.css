@@ -92,14 +92,9 @@ body {
 
 @media screen and (max-width: 530px) {
 main{
-    display: flex;
-    flex-direction: column;
-    background: white;
-    padding: 0.5rem;
-    max-width: 36.5rem;
-    border-radius: 0.2rem;
     position: none;
-margin:20%;
+    margin:100px;
+    
  
    
   }
