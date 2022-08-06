@@ -1,3 +1,12 @@
 <?php
 
-echo "Essa ideia de verificar o que já tem na lista antes de mandar outra consulta tb é muito boa. Porque se com 4 caracteres já tá trazendo um catatau de resultados, de repente se o 5 seguir os 4 anteriores eu com java-script mesmo já mato os que começarem a fugir do escopo. ainda vou testar o código mas +1 pela ideia." ; 
+echo "
+[xmlhttp.onreadystatechange] <hr>
+- Essa propriedade possui 5 estados:<hr>
+0. não iniciado (unitialised): o objeto não foi iniciado 
+(nenhuma comunicação criada).<hr>
+1. carregando (loading): documento encontrado e carregando.<hr>
+2. carregado (loaded): o documento acabou de ser carregado.<hr>
+3. interativo (interactive): O objeto XMLHttpRequest está
+processando dados.<hr>
+4. completo (completed): a comunicação finalizou." ; 

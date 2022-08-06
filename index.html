@@ -30,6 +30,10 @@
             border-radius: 0.2rem;
         }
 
+        hr{
+            opacity: 0;
+        }
+
     </style>
 </head>
 <body>
@@ -57,7 +61,7 @@
             trocaTexto()})
             btn3.addEventListener("click", function(event) {
                 nomeBtn = "Botão-3<hr>"
-            url="pagina3.php";
+            url="pagina3.txt";
             trocaTexto()})
 
 
@@ -73,8 +77,7 @@
         texto.innerHTML =texto.innerHTML+ "Apos  open: "+ajax.readyState+" - Status: "+ajax.status+"<br><hr>"
 
         ajax.send(null);
-        texto.innerHTML =texto.innerHTML+ "Apos  send: "+ajax.readyState+" - Status: "+ajax.status
-        +"<br><hr>"
+      
         
         ajax.onreadystatechange = function conteudo(){
                       texto.innerHTML =texto.innerHTML+ "Apos onreadystatechange: "+ajax.readyState+" - Status: "+ajax.status+"<br><hr>"
