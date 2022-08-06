@@ -1,5 +1,5 @@
 <?php
-
+// phpcs:ignoreFile
 echo "
 [xmlhttp.onreadystatechange] <hr>
 - Essa propriedade possui 5 estados:<hr>
