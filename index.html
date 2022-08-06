@@ -1,99 +1,22 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body{
-            background: rgba(0, 0, 0, 0.438);
-        }
-        input {
-            width: 6rem;
-            height: 2rem;
-            color: red;
-            cursor: pointer;
-            margin-left: 1rem;
-        }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        .escolha{
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            background: rgb(140, 243, 140);
-            margin-top: 1rem;
-            align-items: flex-start;
-            padding: 0.5rem;
-            max-width: 19.5rem;
-            margin-left: 1rem;
-            border-radius: 0.2rem;
-        }
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
 
-        hr{
-            opacity: 0;
-        }
-
-    </style>
-</head>
-<body>
-           <section>               
-                <input id="botao1" type="button"  value="BOTÃO_1"> 
-                <input id="botao2" type="button"  value="BOTÃO_2">
-                <input id="botao3" type="button"  value="BOTÃO_3">
-                <section class="escolha">TEXTO</section>
-           </section>
-    <script>
-        let btn1 = document.querySelector('#botao1')
-        let btn2 = document.querySelector('#botao2')
-        let btn3 = document.querySelector('#botao3')
-        var texto = document.querySelector('.escolha')
-        var nomeBtn =""
-        var url = ""
-        
-            btn1.addEventListener("click", function(event) {
-                nomeBtn = "Botão-1<hr>"
-            url="pagina1.php";
-            trocaTexto()})
-            btn2.addEventListener("click", function(event) {
-                nomeBtn = "Botão-2<hr>"
-            url="pagina2.php";
-            trocaTexto()})
-            btn3.addEventListener("click", function(event) {
-                nomeBtn = "Botão-3<hr>"
-            url="pagina3.txt";
-            trocaTexto()})
-
-
-        function trocaTexto(){
-        texto.innerHTML = ""
-        texto.innerHTML = nomeBtn
-
-
-        var ajax = new XMLHttpRequest
-        texto.innerHTML =texto.innerHTML+ "Antes open: "+ajax.readyState+" - Status: "+ajax.status+"<br><hr>"
-        ajax.open("GET",url,true)
-
-        texto.innerHTML =texto.innerHTML+ "Apos  open: "+ajax.readyState+" - Status: "+ajax.status+"<br><hr>"
-
-        ajax.send(null);
-      
-        
-        ajax.onreadystatechange = function conteudo(){
-                      texto.innerHTML =texto.innerHTML+ "Apos onreadystatechange: "+ajax.readyState+" - Status: "+ajax.status+"<br><hr>"
-            
-            if (ajax.readyState==4){
-                if (ajax.status==200){
-                    texto.innerHTML = texto.innerHTML+"TEXTO:<hr>"+ ajax.responseText;
-                }else{
-                    texto.innerHTML = texto.innerHTML+"Erro ao acessar a página: "+ajax.status;
-                }
-            }
-        }
-        
-        
-        }
-        
-    </script>
-</body>
+    <title>Implementação AJAXA</title>
+  </head>
+  <body>
+    <main>
+      <section class="botao">
+        <input id="botao1" type="button" value="BOTÃO_1" />
+        <input id="botao2" type="button" value="BOTÃO_2" />
+        <input id="botao3" type="button" value="BOTÃO_3" />
+      </section>
+      <section class="escolha">TEXTO</section>
+    </main>
+  </body>
 </html>

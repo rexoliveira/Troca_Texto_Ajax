@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+*{
+    margin: none;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgba(0, 0, 0, 0.438);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  main{
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 0.5rem;
+    max-width: 36.5rem;
+    border-radius: 0.2rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+   
+  }
+  .botao{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 1rem;
+  }
+  
+  input {
+      width: 6rem;
+      height: 2rem;
+      background: black;
+      color: white;
+      cursor: pointer;
+      font-weight: 700;
+      border-radius: 0.2rem;
+      
+    }
+    
+    .escolha {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    background: rgba(0, 0, 0, 0.497);
+    color: white;
+    font-style: italic;
+    margin-top: 1rem;
+    align-items: flex-start;
+    padding: 0.5rem;
+    max-width: 33.5rem;
+    border-radius: 0.2rem;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 0.1rem;
+    
+  }
+  h1{
+    font-weight: 0;
+    font-size: 1rem;
+  }
+
+  .nomebotao{
+    color: blue;
+    font-weight: 600;
+  }
+  .status{
+    color: green;
+    font-weight: 600;
+  }
+  .mensagem{
+    color: #69ff69;
+  }
+  .titulotexto{
+    color: orange;
+    font-weight: 600;
+  }
+
+  .texto{
+    color: #facc77;
+  }
+
+  .erro{
+    color: red;
+  }
+
+  hr{
+    opacity: 0;
+  }
