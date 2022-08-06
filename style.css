@@ -94,7 +94,7 @@ body {
 main{
     position: none;
     margin:100px;
-    
+    max-width: 12.1rem;
  
    
   }
