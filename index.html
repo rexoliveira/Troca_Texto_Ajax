@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            width: 6rem;
+            height: 2rem;
+            color: red;
+            cursor: pointer;
+        }
+
+        .escolha{
+            background: green;
+            margin-top: 1rem;
+            width: 12rem;
+            height: 5rem;
+        }
+    </style>
+</head>
+<body>
+           <section>               
+                <input id="botao1" type="button" onclick="trocaTexto()" value="BOTÃO_1"></input>
+                <input id="botao2" type="button" onclick="trocaTexto()" value="BOTÃO_2"></input>
+                <section class="escolha">Teste</section>
+           </section>
+        
+    
+           
+  
+
+    <script>
+         function trocaTexto(){
+            const btn1 = document.querySelector('botao1')
+            const btn2 = document.querySelector('botao2')
+            const texto = document.querySelector('escolha')
+
+            let ajax = new XMLHttpRequest
+                     
+        btn1.addEventListener("click",()=>ajax.open("get","pagina1.php"))
+        btn2.addEventListener("click",()=>ajax.open("get","pagina2.php"))
+          
+            /* ajax.onload() */
+            ajax.onreadystatechange = conteudo();
+            ajax.send();
+        }
+        
+        
+        function conteudo(){
+            if (ajax.readyState==4){
+                console.log(ajax.readyState)
+                if (ajax.status==200){
+                    texto.innerHTML = ajax.responseText;
+                }
+            }
+        }
+        
+    </script>
+</body>
+</html>
